@@ -554,9 +554,12 @@ MonoBehaviour:
   Rcon: {fileID: 416094820}
   player_Height: 2
   speed: 1
+  power: 100
   tereport_icon: {fileID: 2056893487}
   point: {fileID: 1753709093}
   ball: {fileID: 2056893487}
+  bullet: {fileID: 6692395263641469732, guid: d5f39b9722e0f854096d75682acd1bbf, type: 3}
+  bulletbody: {fileID: 762152417026348914, guid: d5f39b9722e0f854096d75682acd1bbf, type: 3}
 --- !u!4 &1147876968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4484591312116288, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}

@@ -8,13 +8,17 @@ public class Tereport : MonoBehaviour
     public GameObject Rcon;
     public float player_Height;
     public float speed;
+    public float power;
     public GameObject tereport_icon;
     public GameObject point;
     public GameObject ball;
+    public GameObject bullet;
+    public Rigidbody bulletbody;
     // Start is called before the first frame update
     void Start()
     {        
      lineRenderer.useWorldSpace = true;
+        bulletbody=bullet.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -53,6 +57,10 @@ public class Tereport : MonoBehaviour
         else
         {
             lineRenderer.gameObject.SetActive(true);
+        }
+        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger)){
+        Instantiate(bullet,Rcon.transform.position,Quaternion.identity);
+        bulletbody.AddForce(ball.transform.forward*power);
         }
         this.transform.Rotate(0, horizontal*speed, 0);
     }
