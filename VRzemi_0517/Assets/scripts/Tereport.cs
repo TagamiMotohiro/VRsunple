@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Tereport : MonoBehaviour
 {
+    private Color White = Color.white;
+    private Color blue = Color.blue;
     public LineRenderer lineRenderer;
     public GameObject Rcon;
     public float player_Height;
@@ -18,7 +20,7 @@ public class Tereport : MonoBehaviour
     void Start()
     {        
      lineRenderer.useWorldSpace = true;
-        bulletbody=bullet.GetComponent<Rigidbody>();
+     bulletbody=bullet.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -27,12 +29,17 @@ public class Tereport : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         Ray ray = new Ray(Rcon.transform.position,Rcon.transform.forward);
         RaycastHit hit;
-        if (Physics.Raycast(ray,out hit))
+        if (Physics.Raycast(ray,out hit)) {
+            if (hit.collider.gameObject.tag=="ground") {
+                lineRenderer.gameObject.SetActive(true);
+                lineRenderer.SetPosition(0, Rcon.transform.position);
+                lineRenderer.SetPosition(1, hit.point);
+                lineRenderer.startWidth = 0.1f;
+                lineRenderer.endWidth = 0.1f;
+            }
+        }else
         {
-            lineRenderer.SetPosition(0, Rcon.transform.position);
-            lineRenderer.SetPosition(1, hit.point);
-            lineRenderer.startWidth = 0.1f;
-            lineRenderer.endWidth = 0.1f;
+           lineRenderer.gameObject.SetActive(false);
         }
         Debug.DrawRay(Rcon.transform.position, Rcon.transform.forward);
         if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger)&&Physics.Raycast(ray,out hit))
@@ -41,26 +48,25 @@ public class Tereport : MonoBehaviour
             {
                 this.transform.position = new Vector3(hit.point.x,hit.point.y+player_Height,hit.point.z);
             }
-
         }
-
-        if (OVRInput.Get(OVRInput.RawButton.RHandTrigger) &&Physics.Raycast(ray, out hit))
+		//if (OVRInput.Get(OVRInput.RawButton.RHandTrigger) && Physics.Raycast(ray, out hit))
+		//{
+		//	if (hit.collider.gameObject.tag == "ball")
+		//	{
+		//		lineRenderer.gameObject.SetActive(false);
+		//		ball.transform.position = point.transform.position;
+		//	}
+		//}
+		//else
+		//{
+		//	lineRenderer.gameObject.SetActive(true);
+		//}
+		if (OVRInput.Get(OVRInput.RawButton.RHandTrigger))
         {
-            if (hit.collider.gameObject.tag == "ball")
+            if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
             {
-                lineRenderer.gameObject.SetActive(false);
-                ball.transform.position = point.transform.position;
-                if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
-                { }
+                Instantiate(bullet, Rcon.transform.position, Quaternion.identity);
             }
-        }
-        else
-        {
-            lineRenderer.gameObject.SetActive(true);
-        }
-        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger)){
-        Instantiate(bullet,Rcon.transform.position,Quaternion.identity);
-        bulletbody.AddForce(ball.transform.forward*power);
         }
         this.transform.Rotate(0, horizontal*speed, 0);
     }
