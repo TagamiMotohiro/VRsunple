@@ -19,13 +19,13 @@ public class bullet : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("当たった");
+	private void OnTriggerEnter(Collider other)
+	{
+		Debug.Log("当たった");
         if(other.gameObject.tag =="field")
         {
             Debug.Log("フィールド外");
             Destroy(this.gameObject);
         }
-    }
+	}
 }

@@ -1,6 +1,10 @@
 Library\Bee\artifacts\mvdfrm\Unity.EditorCoroutines.Editor.ref.dll_34ED10A34098B2DB.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Performance.Profile-Analyzer.Editor.ref.dll_65A192712782EB2B.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.PlasticSCM.Editor.ref.dll_257AEB342BE77856.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.ProBuilder.AddOns.Editor.ref.dll_F524F8CE15EFFDA6.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.ProBuilder.AssetIdRemapUtility.ref.dll_A186D6143F9C679C.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.ProBuilder.Editor.ref.dll_E3AF217646286A75.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.ProBuilder.ref.dll_E7A4225E7DFD40FC.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Rider.Editor.ref.dll_9B5591808ABA37AF.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Subsystem.Registration.ref.dll_6F73CCF373812FF6.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.ref.dll_D3B9364D6FB03093.mvfrm
@@ -111,4 +115,4 @@ Library\Bee\artifacts\mvdfrm\UnityEngine.VirtualTexturingModule.dll_C9F0CD6C377D
 Library\Bee\artifacts\mvdfrm\UnityEngine.VRModule.dll_3005F64C550BB2A9.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEngine.WindModule.dll_1DF58795CEE9C2E5.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEngine.XRModule.dll_62C4B950DE460007.mvfrm
-Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Antlr3.Runtime.dll_C1FB31FF7CA875EA.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Antlr3.Runtime.dll_F55100D1759B61B2.mvfrm
